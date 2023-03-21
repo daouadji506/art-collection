@@ -1,0 +1,21 @@
+@use '~styles/appColors' as *;
+.image-viewer {
+
+    .image-div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        align-self: stretch;
+        flex-grow: 1;
+        overflow: hidden;
+        overflow-y: auto;
+        max-height: calc(100vh - 200px);
+
+        >img{
+            object-fit: cover;
+            vertical-align: middle;
+            border-radius: 5px;
+        }
+    }
+}

@@ -1,0 +1,38 @@
+@use '~styles/appColors' as *;
+.alert-toast {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    background-color: $secondarycolor;
+    padding-right:  10px;
+    border-radius: 9px;
+    width: fit-content;
+    min-width: 20%;
+    > span {
+        font-size: 14px;
+        color: $white;
+    }
+    @keyframes slideIn {
+        0% {
+            opacity: 0;
+            transform: translate(0,30px);
+        }
+        100% {
+            transform: translate(0,0);
+            opacity: 1; }
+    }
+    @keyframes slideOut {
+        0% {
+            transform: translate(0,0);
+            opacity: 1;
+        }
+        20%{
+            opacity: 0;
+        }
+        100% {
+            transform: translate(0,30px);
+            opacity: 0;
+        }
+    }
+}

@@ -1,0 +1,72 @@
+@use '~styles/appColors' as *;
+@use '~styles/constants' as *;
+.select-input {
+  display: flex;
+  flex-direction: column;
+  align-content: stretch;
+  align-items: stretch;
+  gap: 5px;
+  cursor: pointer;
+  height: 40px;
+  flex-grow: 1;
+
+  > .select {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0 10px 0;
+    gap: 10px;
+    > .arrow {
+      stroke: $white;
+    }
+    > span {
+      flex-grow: 1;
+
+      font-weight: 500;
+      font-size: 13px;
+      color: $silvergray;
+    }
+  }
+  > .options {
+    display: flex;
+    z-index: 10;
+    visibility: hidden;
+    background-color: $darkerseccolor;
+    flex-direction: column;
+    align-items: stretch;
+    padding:10px;
+    border-radius: 15px;
+
+    > span {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      padding:15px ;
+      border-radius: 10px;
+      font-weight: 500;
+      font-size: 13px;
+      color: $white;
+      cursor: pointer;
+      &:hover {
+        background-color: $darker;
+      }
+    }
+  }
+  &.select {
+    > .select > span {
+      color: $white;
+    }
+  }
+
+  &.open {
+    inset-inline-start: $coldred;
+    > .options {
+      visibility: visible;
+    }
+    > .select >div
+    > .arrow {
+      transform: rotate(180deg);
+    }
+  }
+}

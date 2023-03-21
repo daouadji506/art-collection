@@ -1,0 +1,7 @@
+@use '~styles/appColors' as *;
+.date-switcher {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+}

@@ -1,0 +1,12 @@
+@use '~styles/appColors' as *;
+.toast-container {
+    position: absolute;
+    z-index: 1000000;
+    bottom: 2vh;
+    left: 1vw;
+    transform-origin: center;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 10px;
+}
