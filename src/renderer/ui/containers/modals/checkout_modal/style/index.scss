@@ -1,0 +1,33 @@
+@use '~styles/appColors' as *;
+.checkout-modal {
+
+    .total-div {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 10px;
+
+        > span {
+            font-weight: 500;
+            font-size: 18px;
+            color: $white;
+
+            + span {
+                font-weight: 600;
+                font-size: 18px;
+                background: linear-gradient(84.23deg, #DC519C 12.84%, #AE4EF5 57.33%, #6D7AFB 99.41%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+            }
+        }
+    }
+
+    .checkout-modal-content {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+}
