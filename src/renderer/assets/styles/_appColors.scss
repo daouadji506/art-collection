@@ -1,5 +1,14 @@
+
+$background : var(--background);
+$lighten : var(--lighten);
+$text-color : var(--text-color);
+$darken : var(--darken);
+$dark-color : var(--dark-color);
+$text-gray : var(--text-gray);
+$red : var(--red);
+$primary : var(--primary);
+
 $coldred: var(--cold-red);
-$background: var(--background);
 $lighterbackground: var(--lighter-background);
 $coldblue: var(--cold-blue);
 $hotred: var(--hot-red);
@@ -10,11 +19,9 @@ $bordercolor: var(--border-color);
 $hotpurple:var(--hot-purple);
 $silvergray: var(--silver-gray);
 $white: var(--white);
-$textgray: var(--text-gray);
+
 $goodblack: var(--good-black);
 $warmorange:var(--warm-orange);
 $darker: var(--darker);
 $light: var(--light);
 $coldblack: var(--cold-black);
-//todo: add text colors(text-primary,text-secondary,text-accent) with the values of white,textgray,silverGray for the default theme
-//todo:& replace every color attribute with text colors instead

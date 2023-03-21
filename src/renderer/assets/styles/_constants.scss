@@ -2,6 +2,14 @@
 
 $gap: 5px;
 $opacityBlur:var(--opacity-blur);
+
+@mixin colorfulSpan {
+  background: linear-gradient(84.23deg, #DC519C 12.84%, #AE4EF5 57.33%, #6D7AFB 99.41%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
 @mixin idle {
   outline: $hotpurple 1px solid;
   box-shadow: 0 0px 1px $bordercolor inset,inset 0 0 3px $hotpurple;
