@@ -5,8 +5,8 @@
   box-sizing: border-box;
   user-select: none;
   font-family: 'Sarabun','noto', Arial, sans-serif;
-  color: $white;
-  scrollbar-color: $hotpurple transparent;
+  color: $text-color;
+  scrollbar-color: $primary transparent;
   scrollbar-width: thin;
 }
 li {
@@ -23,7 +23,16 @@ input[type=file]::-webkit-file-upload-button {
 }
 
 :root {
-  --background: #23315e;
+  --background: rgba(0, 0, 0, 1);
+  --lighten: rgba(255, 255, 255, 0.07000000029802322);
+  --text-color: rgba(255, 255, 255, 1);
+  --darken: rgba(0, 0, 0, 0.5);
+  --dark-color: rgba(31, 30, 37, 1);
+  --text-gray: rgba(124, 124, 124, 1);
+  --red: rgba(255, 38, 38, 1);
+  --primary :
+    linear-gradient(84.23deg, #DC519C 12.84%, #AE4EF5 57.33%, #6D7AFB 99.41%);
+
   --lighter-background: #2c3964;
   --cold-red: #ff4b59;
   --cold-blue: #01b9ca;
@@ -36,12 +45,11 @@ input[type=file]::-webkit-file-upload-button {
   --silver-gray: #646d8d;
   --hot-purple: #626ed4;
   --white: #ffffff;
-  --text-gray: #bdbdbd;
+
   --good-black: #18191c;
   --darker: #00000020;
   --light: #ffffff20;
-  --cold-black: #374151;
-}
+  --cold-black: #374151;}
 :any-link {
   text-decoration: none;
 }
@@ -62,7 +70,7 @@ body,
 }
 
 ::-webkit-scrollbar-thumb {
-  background: $hotpurple;
+  background: $primary;
   //box-shadow: 0px 0px 4px $hotpurple;
   border-radius: 11vh;
 }
@@ -93,7 +101,7 @@ select:-webkit-autofill,
 select:-webkit-autofill:hover,
 select:-webkit-autofill:focus {
   -webkit-text-fill-color: $white;
-  box-shadow: 0 0 0px 1000px $darkerseccolor inset;
+  box-shadow: 0 0 0px 1000px $darken inset;
   transition: background-color 5000s ease-in-out 0s;
 }
 input::-webkit-search-decoration,
