@@ -1,0 +1,59 @@
+@use '~styles/appColors' as *;
+@use '~styles/constants'as * ;
+
+.border-wrap {
+    width: fit-content;
+    position: relative;
+    background:$primary;
+    padding: 1px;
+    border-radius: 10px;
+
+    > .cart-item {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 10px;
+        overflow: hidden;
+        padding: 5px 10px;
+        background-color: $dark-color;
+        border-radius: 10px;
+        min-width: 180px;
+        max-width: 180px;
+
+        > .trash-button {
+            position: absolute;
+            right: -10px;
+            bottom: -10px;
+            display: none;
+        }
+
+        > .image-item-wrapper {
+
+            >img{
+                object-fit: cover;
+                max-width: 80px;
+                max-height:90px;
+                vertical-align: middle;
+            }
+        }
+
+        > .info-div {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+
+            .colorful-span {
+                font-weight: 600;
+                font-size: 14px;
+
+                @include colorfulSpan;
+            }
+        }
+
+        &:hover {
+            > .trash-button {
+                display: flex;
+            }
+        }
+    }
+}
