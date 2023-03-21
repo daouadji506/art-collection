@@ -6643,6 +6643,11 @@ create-hmac@^1.1.0, create-hmac@^1.1.4, create-hmac@^1.1.7:
     safe-buffer "^5.0.1"
     sha.js "^2.4.8"
 
+credit-card-type@^8.3.0:
+  version "8.3.0"
+  resolved "https://registry.yarnpkg.com/credit-card-type/-/credit-card-type-8.3.0.tgz#f93c187c9362411544158c91d552efcc443aa87a"
+  integrity sha512-czfZUpQ7W9CDxZL4yFLb1kFtM/q2lTOY975hL2aO+DC8+GRNDVSXVCHXhVFZPxiUKmQCZbFP8vIhxx5TBQaThw==
+
 cross-spawn-windows-exe@^1.1.0, cross-spawn-windows-exe@^1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/cross-spawn-windows-exe/-/cross-spawn-windows-exe-1.2.0.tgz#46253b0f497676e766faf4a7061004618b5ac5ec"
@@ -9092,7 +9097,7 @@ globals@^13.19.0:
   dependencies:
     type-fest "^0.20.2"
 
-globalthis@^1.0.0, globalthis@^1.0.1:
+globalthis@^1.0.0, globalthis@^1.0.1, globalthis@^1.0.2:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/globalthis/-/globalthis-1.0.3.tgz#5852882a52b80dc301b0660273e1ed082f0b6ccf"
   integrity sha512-sFdI5LyBiNTHjRd7cGPWapiHWMOXKyuBNX/cWJ3NfzrZQVa8GI/8cofCl74AOVqq9W5kNmguTIzJ/1s2gyI9wA==
@@ -11219,6 +11224,11 @@ lru-cache@^7.7.1:
   resolved "https://registry.yarnpkg.com/lru-cache/-/lru-cache-7.14.0.tgz#21be64954a4680e303a09e9468f880b98a0b3c7f"
   integrity sha512-EIRtP1GrSJny0dqb50QXRUNBxHJhcpxHC++M5tD7RYbvLLn5KVWKsbyswSSqDuU15UFi3bgTQIY8nhDMeF6aDQ==
 
+luhn@^2.4.1:
+  version "2.4.1"
+  resolved "https://registry.yarnpkg.com/luhn/-/luhn-2.4.1.tgz#9cf501c5d0e9f7ee79504338ae71c9bcc67c304a"
+  integrity sha512-p1eEWSb2RJAfv+BzrPEUqbUXV1H3ylHEAOk9yDM1L12ojD6OQQGrE29DqKLa0XYluJTIwXIOFmyzVOme3QSyww==
+
 lz-string@^1.4.4:
   version "1.4.4"
   resolved "https://registry.yarnpkg.com/lz-string/-/lz-string-1.4.4.tgz#c0d8eaf36059f705796e1e344811cf4c498d3a26"
@@ -12613,6 +12623,14 @@ path-type@^4.0.0:
   resolved "https://registry.yarnpkg.com/path-type/-/path-type-4.0.0.tgz#84ed01c0a7ba380afe09d90a8c180dcd9d03043b"
   integrity sha512-gDKb8aZMDeD/tZWs9P6+q0J9Mwkdl6xMV8TjnGP3qJVJ06bdMgkbBlLU8IdfOsIsFz2BW1rNVT3XuNEl8zPAvw==
 
+payment@^2.3.0:
+  version "2.4.6"
+  resolved "https://registry.yarnpkg.com/payment/-/payment-2.4.6.tgz#a69bfae5ee6edb2210d8c9f7720ee702359a40f5"
+  integrity sha512-QSCAa1yQSkqbe4Ghac3sSA5SQ+Cxc3e4xwCxxun5NT6hUSWsNXXlN8KCCY0kAFFXBP9C7DrfyXP4REB7nPJa8g==
+  dependencies:
+    globalthis "^1.0.2"
+    qj "~2.0.0"
+
 pbkdf2@^3.0.3:
   version "3.1.2"
   resolved "https://registry.yarnpkg.com/pbkdf2/-/pbkdf2-3.1.2.tgz#dd822aa0887580e52f1a039dc3eda108efae3075"
@@ -13757,6 +13775,11 @@ pure-color@^1.3.0:
   resolved "https://registry.yarnpkg.com/pure-color/-/pure-color-1.3.0.tgz#1fe064fb0ac851f0de61320a8bf796836422f33e"
   integrity sha512-QFADYnsVoBMw1srW7OVKEYjG+MbIa49s54w1MA1EDY6r2r/sTcKKYqRX1f4GYvnXP7eN/Pe9HFcX+hwzmrXRHA==
 
+qj@~2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/qj/-/qj-2.0.0.tgz#054dd3b75ce018728d23a0605f030dfda0bd158a"
+  integrity sha512-8466vlnAF/piI42tzMBUfhaAWn2yBNPOLSSbA2YBlEh+S8CxBXbAO1AwuDReGKYX6LlsK19wBL9cpXZGlgsXxA==
+
 qs@6.11.0, qs@^6.10.0, qs@^6.4.0:
   version "6.11.0"
   resolved "https://registry.yarnpkg.com/qs/-/qs-6.11.0.tgz#fd0d963446f7a65e1367e01abd85429453f0c37a"
@@ -13838,6 +13861,15 @@ rcedit@^3.0.1:
   integrity sha512-XM0Jv40/y4hVAqj/MO70o/IWs4uOsaSoo2mLyk3klFDW+SStLnCtzuQu+1OBTIMGlM8CvaK9ftlYCp6DJ+cMsw==
   dependencies:
     cross-spawn-windows-exe "^1.1.0"
+
+react-credit-cards-2@^0.10.0:
+  version "0.10.0"
+  resolved "https://registry.yarnpkg.com/react-credit-cards-2/-/react-credit-cards-2-0.10.0.tgz#06c661e2261a6ad44185f44e6b00e7e04c2c4995"
+  integrity sha512-B4GNVl6huDGK7Qc9ASof1kXRJjmQSmzZzpD9yUG9/SsCSa1drSVisbqTPjB+9IvyF2NGY3NZliNVzzi2zO7JNg==
+  dependencies:
+    credit-card-type "^8.3.0"
+    luhn "^2.4.1"
+    payment "^2.3.0"
 
 react-datepicker@^4.8.0:
   version "4.8.0"
