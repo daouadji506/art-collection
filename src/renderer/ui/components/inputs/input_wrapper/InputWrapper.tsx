@@ -1,5 +1,4 @@
 /* eslint-disable no-unused-vars */
-import { color } from '@assets/styles/color';
 import {
   MouseEventHandler,
   ReactNode,
@@ -33,8 +32,8 @@ export default function InputWrapper({
   trailing,
   padding = 10,
   inputAlignment = 'flex-start',
-  background = color.darkersec_color,
-  borderColor = color.border_color,
+  background,
+  borderColor,
   radius = 10,
   children,
   errorMessage,

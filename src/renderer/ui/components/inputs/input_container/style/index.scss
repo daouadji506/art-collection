@@ -5,7 +5,21 @@
     flex-direction: column;
     align-items: stretch;
     gap: 10px;
-    padding: 0 1px;
+
+    > .colorful-border{
+        padding: 1px;
+        background:$bordercolor;
+        border-radius: 10px;
+    }
+
+    &:focus-within ,&:active,&:focus {
+
+        > .colorful-border {
+            position: relative;
+            background:$primary;
+        }
+    }
+
     >.field{
         display: flex;
         gap: 10px;
@@ -24,7 +38,7 @@
     > span:last-of-type {
         font-weight: 500;
         font-size: 14px;
-        color: $textgray;
+        color: $text-gray;
     }
 
     &.error {

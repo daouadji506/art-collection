@@ -44,27 +44,29 @@ export default function InputContainer({
           : undefined
       }
     >
-      <>
-        <div
-          className="field"
-          css={{
-            flexDirection: direction === 'vertical' ? 'column' : 'row',
-            alignItems: direction === 'vertical' ? 'stretch' : 'center',
-          }}
-        >
-          {label && (
-            <label htmlFor={name}>
-              {label + (direction == 'horizontal' ? ':' : '')}
-            </label>
+      <div className="colorful-border">
+        <>
+          <div
+            className="field"
+            css={{
+              flexDirection: direction === 'vertical' ? 'column' : 'row',
+              alignItems: direction === 'vertical' ? 'stretch' : 'center',
+            }}
+          >
+            {label && (
+              <label htmlFor={name}>
+                {label + (direction == 'horizontal' ? ':' : '')}
+              </label>
+            )}
+            {children}
+          </div>
+          {errorMessage ? (
+            <span>{errorMessage}</span>
+          ) : (
+            hint && <span css={{ alignSelf: hintAlignment }}>{hint}</span>
           )}
-          {children}
-        </div>
-        {errorMessage ? (
-          <span>{errorMessage}</span>
-        ) : (
-          hint && <span css={{ alignSelf: hintAlignment }}>{hint}</span>
-        )}
-      </>
+        </>
+      </div>
     </div>
   );
 }

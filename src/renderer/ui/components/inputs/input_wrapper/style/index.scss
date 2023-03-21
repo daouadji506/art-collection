@@ -6,6 +6,8 @@
   flex-direction: row;
   align-items: center;
   gap: 5px;
+  background:$dark-color;
+
   >.untouched-item{
     position: absolute;
     background: $bordercolor;
@@ -35,7 +37,7 @@
       font-style: normal;
       font-weight: 400;
       font-size: 14px;
-      &::placeholder{ color: $textgray; }
+      &::placeholder{ color: $text-gray; }
       width: 100%;
     }
     input[type=file] {
@@ -56,7 +58,7 @@
   }
 
   &:focus-within ,&:active,&:focus{
-    @include idle;
+    // @include idle;
     >.input-content{
       opacity: 1;
       /* stylelint-disable-next-line no-descending-specificity */
