@@ -15,6 +15,7 @@ interface ModalContainerProps {
   controlsPosition?: 'center' | 'end';
   titleMaxWidth?: number | string;
   overflowHidden?: boolean;
+  buttonNode?: ReactNode;
 }
 const Form = (
   props: ClassAttributes<HTMLFormElement> &
@@ -40,6 +41,7 @@ export default function ModalContainer({
   controlsPosition = 'center',
   titleMaxWidth,
   overflowHidden,
+  buttonNode,
 }: ModalContainerProps) {
   const Container = onSubmit ? Form : Div;
 
@@ -53,7 +55,12 @@ export default function ModalContainer({
         <LoadingSpinner />
       ) : (
         <>
-          <Header title={title} padding={0} titleMaxWidth={titleMaxWidth} />
+          <Header
+            title={title}
+            padding={0}
+            titleMaxWidth={titleMaxWidth}
+            buttonNode={buttonNode}
+          />
           <div
             className="modal-body"
             css={overflowHidden ? { overflow: 'hidden' } : undefined}
