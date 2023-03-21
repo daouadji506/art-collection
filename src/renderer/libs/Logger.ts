@@ -1,5 +1,4 @@
 /* eslint-disable no-console */
-import { staticColors as colors } from '@assets/styles/color';
 import chalk from 'chalk';
 
 export class Logger {
@@ -36,10 +35,10 @@ export class Logger {
     console.log(
       `%c${message}`,
       `-webkit-text-stroke: 2px black;font-size: xxx-large;font-weight:bold;color:${
-        color ?? colors.cold_blue
+        color ?? 'blue'
       };`,
     );
     return this;
   }
 }
-Logger.scream('STOP THERE!!!', colors.hot_red);
+Logger.scream('STOP THERE!!!', 'red');
