@@ -1,0 +1,11 @@
+@use '~styles/appColors' as *;
+.colorful-border {
+    padding: 1px;
+    border-radius: 10px;
+    // background:$primary;
+
+    &:hover {
+        position: relative;
+        background:$primary;
+    }
+}
