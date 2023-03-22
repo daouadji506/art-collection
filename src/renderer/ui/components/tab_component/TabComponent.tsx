@@ -1,13 +1,20 @@
 import { color } from '@assets/styles/color';
 import DarkAddButton from '@components/buttons/dark_add_button';
-import DarkLightCornerButton from '@components/buttons/dark_light_corner_button';
-import { MouseEvent, ReactNode, useRef, useState } from 'react';
+import {
+  FunctionComponent,
+  MouseEvent,
+  ReactNode,
+  SVGProps,
+  useRef,
+  useState,
+} from 'react';
 import './style/index.scss';
 import VerticalPanel from '@components/vertical_panel';
 import { tooltip } from '@libs/overlay';
+import ColorfulButton from '@components/buttons/colorful_button';
 
 interface TabType {
-  label: string;
+  label: { text: string; icon?: FunctionComponent<SVGProps<SVGSVGElement>> };
   content: ReactNode;
 }
 
@@ -42,7 +49,7 @@ export default function TabComponent({
       tooltip(
         () =>
           foldRef?.current?.map((item) => ({
-            text: item.label,
+            text: item.label.text,
             onPress: () => {
               foldRef.current = foldRef.current?.filter(
                 (foldItem) => foldItem != item,
@@ -75,15 +82,32 @@ export default function TabComponent({
         >
           {allTabs.length > 0 &&
             allTabs.map(({ label }, index) => (
-              <DarkLightCornerButton
+              <ColorfulButton
+                alignment="center"
                 key={index}
-                text={label}
+                text={label.text}
+                fontSize={14}
+                css={{
+                  backgroundImage:
+                    activeTabIndex == index ? color.primary : undefined,
+                }}
+                Icon={
+                  label.icon
+                    ? {
+                        svg: label.icon,
+                        iconType: 'stroke',
+                        iconAfterColor: color.white,
+                        iconColor:
+                          activeTabIndex == index ? color.white : undefined,
+                      }
+                    : undefined
+                }
                 isActive={activeTabIndex == index}
                 onPress={() => {
                   if (index != activeTabIndex)
                     setAllTabs((prev) => ({ ...prev, defaultSelected: index }));
                 }}
-              />
+              ></ColorfulButton>
             ))}
           {foldRef.current && foldRef.current.length > 0 && (
             <DarkAddButton onPress={switchFoldToTab} />
