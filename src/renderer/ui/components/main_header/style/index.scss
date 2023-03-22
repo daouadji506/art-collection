@@ -1,0 +1,58 @@
+@use '~styles/appColors' as *;
+@use '~styles/constants'as * ;
+
+.main-header {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    padding: 10px 30px;
+    justify-content: space-between;
+    background: $dark-color;
+    border-radius: 0px 0px 30px 30px;
+    align-self: center;
+    width: 70%;
+
+    > .title-span-div {
+        display: flex;
+        flex-direction: row;
+        align-items: baseline;
+        justify-content: flex-start;
+        gap: 5px;
+
+        > .colorful-span {
+            font-weight: 300;
+            font-size: 30px;
+            @include colorfulSpan;
+
+            + span {
+                color: $text-color;
+                font-weight: 300;
+                font-size: 30px;
+            }
+        }
+    }
+
+    > .header-controls {
+        position: relative;
+
+        > .count-badge {
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            right: 0px;
+            top: 0px;
+            background: $red;
+            border-radius: 100%;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            > span {
+                color: $text-color;
+                font-weight: 700;
+                font-size: 9px;
+            }
+        }
+    }
+}
