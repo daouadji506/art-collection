@@ -1,5 +1,5 @@
-import PaymentModal from '@containers/modals/payment_modal';
 import './App.scss';
+import MainLayer from '@containers/layers/main_layer';
 
 interface AppProps {}
 
@@ -7,7 +7,7 @@ function App({}: AppProps) {
   return (
     <>
       <div className={'app-container '}>
-        <PaymentModal />
+        <MainLayer />
       </div>
     </>
   );
