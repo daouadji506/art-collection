@@ -160,7 +160,7 @@ export default function TextButton({
       type={type}
       className={`text-button${isHold ? ' hold' : ''} ${className || ''}`}
       css={{
-        backgroundColor: !disabled ? backgroundColor : colors.light,
+        background: !disabled ? backgroundColor : colors.light,
         ...(!outline
           ? {
               border: `${borderColor} ${borderWidth}px solid`,
