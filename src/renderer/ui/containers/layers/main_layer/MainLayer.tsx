@@ -1,26 +1,88 @@
 import MainHeader from '@components/main_header';
 import './style/index.scss';
-import TabComponent from '@components/tab_component';
-import Trending from 'toSvg/Trending.svg?icon';
-
+import { useState } from 'react';
+import TabMenu from '@components/tab_menu';
+import ImageItem from '@components/image_item';
+import profile from '@assets/pictures/example.png';
+import Arrow from 'toSvg/Arrow.svg?icon';
+import Carousel from 'react-simply-carousel';
 interface MainLayerProps {}
 export default function MainLayer({}: MainLayerProps) {
+  const [activeSlide, setActiveSlide] = useState(0);
+  //FIXME  when you hover the imageItem the svgs that contain gradient color are not showing
+  //FIXME occures only inside  Carousel
   return (
     <div className="main-layer">
       <MainHeader />
-      <TabComponent
-        borderBottom={false}
-        items={[
-          { label: { text: 'New' }, content: <div></div> },
-          {
-            label: {
-              text: 'Trending',
-              icon: Trending,
+
+      <div className="tab-container">
+        <TabMenu items={['New', 'Trending']} borderBottom={false} />
+
+        <Carousel
+          activeSlideIndex={activeSlide}
+          onRequestChange={setActiveSlide}
+          forwardBtnProps={{
+            className: 'arrow-btn',
+            children: <Arrow />,
+          }}
+          backwardBtnProps={{
+            className: 'arrow-btn',
+            children: <Arrow css={{ rotate: '180deg' }} />,
+          }}
+          responsiveProps={[
+            {
+              itemsToShow: 4,
+              itemsToScroll: 2,
+              minWidth: 768,
             },
-            content: <div></div>,
-          },
-        ]}
-      />
+          ]}
+          speed={400}
+          easing="linear"
+          itemsListProps={{ className: 'carousel-items' }}
+        >
+          <ImageItem
+            url={profile}
+            alt="profile"
+            height={400}
+            width={300}
+            name={'harnan'}
+            price={5000}
+          />
+
+          <ImageItem
+            url={profile}
+            alt="profile"
+            height={400}
+            width={300}
+            name={'harnan'}
+            price={5000}
+          />
+          <ImageItem
+            url={profile}
+            alt="profile"
+            height={400}
+            width={300}
+            name={'harnan'}
+            price={5000}
+          />
+          <ImageItem
+            url={profile}
+            alt="profile"
+            height={400}
+            width={300}
+            name={'harnan'}
+            price={5000}
+          />
+          <ImageItem
+            url={profile}
+            alt="profile"
+            height={400}
+            width={300}
+            name={'harnan'}
+            price={5000}
+          />
+        </Carousel>
+      </div>
     </div>
   );
 }
