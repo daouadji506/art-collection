@@ -6,6 +6,7 @@ import ImageItem from '@components/image_item';
 import profile from '@assets/pictures/example.png';
 import Arrow from 'toSvg/Arrow.svg?icon';
 import Carousel from 'react-simply-carousel';
+import ColorfulButton from '@components/buttons/colorful_button';
 interface MainLayerProps {}
 export default function MainLayer({}: MainLayerProps) {
   const [activeSlide, setActiveSlide] = useState(0);
@@ -82,6 +83,7 @@ export default function MainLayer({}: MainLayerProps) {
           />
         </Carousel>
       </div>
+      <ColorfulButton text="View all art" alignSelf="center" width={'70%'} />
     </div>
   );
 }
