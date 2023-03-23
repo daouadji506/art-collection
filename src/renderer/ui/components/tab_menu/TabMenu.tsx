@@ -1,8 +1,8 @@
 import colors from '@assets/styles/color';
 import { Badged } from '@components/badge/Badge';
-import DarkLightCornerButton from '@components/buttons/dark_light_corner_button';
 import { ReactNode, useEffect, useState } from 'react';
 import './style/index.scss';
+import ColorfulButton from '@components/buttons/colorful_button';
 interface TabMenuProps {
   items: Array<string>;
   defaultSelected?: number;
@@ -53,7 +53,7 @@ export default function TabMenu({
                 key={index}
                 skip={!previews?.includes(index)}
               >
-                <DarkLightCornerButton
+                <ColorfulButton
                   text={text}
                   isActive={selected == index}
                   onPress={() => setTab(index)}
