@@ -1,3 +1,4 @@
+import { OverlayContainer } from '@libs/overlay/OverlayContainer';
 import './App.scss';
 import MainLayer from '@containers/layers/main_layer';
 
@@ -9,6 +10,7 @@ function App({}: AppProps) {
       <div className={'app-container '}>
         <MainLayer />
       </div>
+      <OverlayContainer />
     </>
   );
 }
