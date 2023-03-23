@@ -20,7 +20,7 @@ interface ImageItemProps {
 export default function ImageItem({
   url,
   alt,
-  height = 200,
+  height,
   width,
   onLike,
   onBuy,
