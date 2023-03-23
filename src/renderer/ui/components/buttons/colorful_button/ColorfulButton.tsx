@@ -25,7 +25,9 @@ export default function ColorfulButton({
       <TextButton
         fontColor={fontColor}
         fontSize={14}
-        backgroundColor={undefined}
+        backgroundColor={
+          'linear-gradient(rgb(41, 43, 51), rgb(41, 43, 51)) no-repeat padding-box, linear-gradient(81.02deg, rgb(250, 85, 96) -23.47%, rgb(177, 75, 244) 45.52%, rgb(77, 145, 255) 114.8%) border-box'
+        }
         afterBgColor={undefined}
         // borderColor={!isActive ? color.primary : undefined}
         radius={9}
