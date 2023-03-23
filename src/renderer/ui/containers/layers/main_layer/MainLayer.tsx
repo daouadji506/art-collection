@@ -9,8 +9,7 @@ import Carousel from 'react-simply-carousel';
 interface MainLayerProps {}
 export default function MainLayer({}: MainLayerProps) {
   const [activeSlide, setActiveSlide] = useState(0);
-  //FIXME  when you hover the imageItem the svgs that contain gradient color are not showing
-  //FIXME occures only inside  Carousel
+
   return (
     <div className="main-layer">
       <MainHeader />
