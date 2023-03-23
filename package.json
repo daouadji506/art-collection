@@ -54,6 +54,7 @@
     "react-pdf": "^6.2.2",
     "react-redux": "^8.0.5",
     "react-router-dom": "6.3.0",
+    "react-simply-carousel": "^8.5.5",
     "react-viewport-list": "6.3.0-beta.0",
     "zod": "^3.20.2",
     "zustand": "^4.1.5"
