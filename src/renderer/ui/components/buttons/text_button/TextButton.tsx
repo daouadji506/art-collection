@@ -212,7 +212,7 @@ export default function TextButton({
               }),
         },
         '&:hover': {
-          backgroundColor: !disabled ? afterBgColor : undefined,
+          background: !disabled ? afterBgColor : undefined,
           ...(!outline
             ? {
                 border:
