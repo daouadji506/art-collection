@@ -69,14 +69,8 @@ const checkoutArray = [
   },
 ];
 
-interface CheckoutModalProps {
-  total: number;
-  onCheckout?: () => void;
-}
-export default function CheckoutModal({
-  total,
-  onCheckout,
-}: CheckoutModalProps) {
+interface CheckoutModalProps {}
+export default function CheckoutModal({}: CheckoutModalProps) {
   return (
     <ModalContainer
       className="checkout-modal"
@@ -84,7 +78,7 @@ export default function CheckoutModal({
       buttonNode={
         <div className="total-div">
           <span>Total:</span>
-          <span>{total} $</span>
+          <span>0 $</span>
         </div>
       }
       controls={
@@ -96,7 +90,6 @@ export default function CheckoutModal({
             iconType: 'stroke',
           }}
           fontWeight={600}
-          onPress={onCheckout}
           fontSize={14}
           radius={9}
           width={'100%'}
