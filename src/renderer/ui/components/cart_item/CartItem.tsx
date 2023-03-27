@@ -3,20 +3,22 @@ import './style/index.scss';
 import { color } from '@assets/styles/color';
 import trashCan from 'toSvg/trash_can.svg?icon';
 import IconicButton from '@components/buttons/iconic_button';
+import { useCheckoutStore } from '@stores/checkoutStore';
 interface CartItemProps {
+  id: number;
   url: string;
-  alt: string;
+  alt?: string;
   title: string;
   price: number;
-  onRemove?: () => void;
 }
 export default function CartItem({
+  id,
   url,
   alt,
   title,
   price,
-  onRemove,
 }: CartItemProps) {
+  const { removeFromCart } = useCheckoutStore();
   return (
     <>
       <div className="border-wrap">
@@ -54,7 +56,9 @@ export default function CartItem({
           </div>
           <IconicButton
             Icon={trashCan}
-            onPress={onRemove}
+            onPress={() => {
+              removeFromCart(id);
+            }}
             width={25}
             backgroundColor={color.hot_red}
             iconColor={color.white}
