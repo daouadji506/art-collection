@@ -2,77 +2,15 @@ import ModalContainer from '@components/modal_container';
 import './style/index.scss';
 import TextButton from '@components/buttons/text_button';
 import Buy from 'toSvg/buy.svg?icon';
-import color from '@assets/styles/color';
-import profile from '@assets/pictures/example.png';
+import { color } from '@assets/styles/color';
 import CartItem from '@components/cart_item';
 import { FIT_MODAL, modal } from '@libs/overlay';
 import PaymentModal from '../payment_modal';
-
-const checkoutArray = [
-  {
-    url: profile,
-    alt: 'profile',
-    title: 'Title',
-    price: 100,
-  },
-  {
-    url: profile,
-    alt: 'profile',
-    title: 'Cool image',
-    price: 100,
-  },
-  {
-    url: profile,
-    alt: 'profile',
-    title: 'Title',
-    price: 100,
-  },
-  {
-    url: profile,
-    alt: 'profile',
-    title: 'Title',
-    price: 100,
-  },
-  {
-    url: profile,
-    alt: 'profile',
-    title: 'Cool image',
-    price: 100,
-  },
-  {
-    url: profile,
-    alt: 'profile profile profile profile',
-    title: 'profile profile profile profile',
-    price: 100,
-  },
-  {
-    url: profile,
-    alt: 'profile',
-    title: 'Title',
-    price: 2000,
-  },
-  {
-    url: profile,
-    alt: 'profile',
-    title: 'Cool image',
-    price: 100,
-  },
-  {
-    url: profile,
-    alt: 'profile',
-    title: 'Title',
-    price: 100,
-  },
-  {
-    url: profile,
-    alt: 'profile',
-    title: 'Title',
-    price: 100,
-  },
-];
+import { useCheckoutStore } from '@stores/checkoutStore';
 
 interface CheckoutModalProps {}
 export default function CheckoutModal({}: CheckoutModalProps) {
+  const checkoutState = useCheckoutStore((state) => state);
   return (
     <ModalContainer
       className="checkout-modal"
@@ -81,7 +19,7 @@ export default function CheckoutModal({}: CheckoutModalProps) {
       buttonNode={
         <div className="total-div">
           <span>Total:</span>
-          <span>0 $</span>
+          <span>{checkoutState.totalPrice} $</span>
         </div>
       }
       controls={
@@ -104,7 +42,7 @@ export default function CheckoutModal({}: CheckoutModalProps) {
       }
     >
       <div className="checkout-modal-content">
-        {checkoutArray.map((item, index) => (
+        {checkoutState.cart.map((item, index) => (
           <CartItem key={index} {...item} />
         ))}
       </div>
