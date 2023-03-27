@@ -5,24 +5,26 @@ import { color } from '@assets/styles/color';
 import TextButton from '@components/buttons/text_button';
 import Buy from 'toSvg/buy.svg?icon';
 import ModalContainer from '@components/modal_container';
+import { useCheckoutStore } from '@stores/checkoutStore';
 interface ProductModalProps {
+  id: number;
   url: string;
   alt?: string;
   title: string;
   artist: string;
   resolution: string;
   price: number;
-  onBuy?: () => void;
 }
 export default function ProductModal({
   url,
   alt,
   title,
-  onBuy,
+  id,
   artist,
   resolution,
   price,
 }: ProductModalProps) {
+  const { addToCart } = useCheckoutStore();
   return (
     <ModalContainer>
       <div className="product-modal">
@@ -100,7 +102,9 @@ export default function ProductModal({
               iconType: 'stroke',
             }}
             fontWeight={600}
-            onPress={onBuy}
+            onPress={() => {
+              addToCart({ id: id, name: title, price: price, url: url });
+            }}
             fontSize={14}
             radius={9}
             width={'fit-content'}
