@@ -5,6 +5,8 @@ import Buy from 'toSvg/buy.svg?icon';
 import color from '@assets/styles/color';
 import profile from '@assets/pictures/example.png';
 import CartItem from '@components/cart_item';
+import { FIT_MODAL, modal } from '@libs/overlay';
+import PaymentModal from '../payment_modal';
 
 const checkoutArray = [
   {
@@ -75,6 +77,7 @@ export default function CheckoutModal({}: CheckoutModalProps) {
     <ModalContainer
       className="checkout-modal"
       title="Cart"
+      overflowHidden
       buttonNode={
         <div className="total-div">
           <span>Total:</span>
@@ -93,9 +96,9 @@ export default function CheckoutModal({}: CheckoutModalProps) {
           fontSize={14}
           radius={9}
           width={'100%'}
-          css={{
-            backgroundImage:
-              'linear-gradient(84.23deg, #DC519C 12.84%, #AE4EF5 57.33%, #6D7AFB 99.41%);',
+          backgroundColor={color.primary}
+          onPress={() => {
+            modal(() => <PaymentModal />, FIT_MODAL).open();
           }}
         />
       }
