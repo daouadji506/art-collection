@@ -11,6 +11,10 @@
     border-radius: 0px 0px 30px 30px;
     align-self: center;
     width: 70%;
+    position: fixed;
+    top: 0;
+    z-index: 10;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
 
     > .title-span-div {
         display: flex;
