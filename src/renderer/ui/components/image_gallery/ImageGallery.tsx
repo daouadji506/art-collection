@@ -67,7 +67,7 @@ export default function ImageGallery({}: ImageGalleryProps) {
       />
       <div className="images-container">
         {imageArray.map((image, index) => (
-          <ImageItem key={index} {...image} />
+          <ImageItem key={index} {...image} id={index} />
         ))}
       </div>
     </div>
