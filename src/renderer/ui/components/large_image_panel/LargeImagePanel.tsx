@@ -11,60 +11,62 @@ const imageArray = [
     url: profile,
     alt: 'profile',
 
-    name: 'harnan',
+    title: 'harnan',
     price: 500,
   },
   {
     url: profile,
     alt: 'profile',
 
-    name: 'harnan',
+    title: 'harnan',
     price: 500,
   },
   {
     url: profile,
     alt: 'profile',
 
-    name: 'harnan',
+    title: 'harnan',
     price: 500,
   },
   {
     url: profile,
     alt: 'profile',
 
-    name: 'harnan',
+    title: 'harnan',
     price: 500,
   },
   {
     url: profile,
     alt: 'profile',
 
-    name: 'harnan',
+    title: 'harnan',
     price: 500,
   },
   {
     url: profile,
     alt: 'profile',
 
-    name: 'harnan',
+    title: 'harnan',
     price: 500,
   },
   {
     url: profile,
     alt: 'profile',
 
-    name: 'harnan',
+    title: 'harnan',
     price: 500,
   },
 ];
 interface LargeImagePanelProps {}
 export default function LargeImagePanel({}: LargeImagePanelProps) {
+  //API fetch images
   const [activeSlide, setActiveSlide] = useState(0);
   return (
     <div className="large-image-panel">
       <TabMenu items={['New', 'Trending']} borderBottom={false} />
 
       <Carousel
+        disableSwipeByMouse={true}
         activeSlideIndex={activeSlide}
         onRequestChange={setActiveSlide}
         forwardBtnProps={{
