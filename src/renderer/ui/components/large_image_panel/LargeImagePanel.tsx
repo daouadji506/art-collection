@@ -3,7 +3,7 @@ import './style/index.scss';
 import TabMenu from '@components/tab_menu';
 import { useState } from 'react';
 import profile from '@assets/pictures/example.png';
-import Arrow from 'toSvg/Arrow.svg?icon';
+import Arrow from 'toSvg/Colorful_Arrow.svg?icon';
 import Carousel from 'react-simply-carousel';
 
 const imageArray = [
@@ -87,7 +87,7 @@ export default function LargeImagePanel({}: LargeImagePanelProps) {
         itemsListProps={{ className: 'carousel-items' }}
       >
         {imageArray.map((image, index) => (
-          <ImageItem key={index} {...image} width={400} />
+          <ImageItem key={index} {...image} id={index} width={400} />
         ))}
       </Carousel>
     </div>
