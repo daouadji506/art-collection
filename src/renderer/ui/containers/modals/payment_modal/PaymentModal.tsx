@@ -8,6 +8,7 @@ import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 import { Inputix } from '@components/inputs/input/Input';
 import { zodResolver } from '@hookform/resolvers/zod';
+import { useCheckoutStore } from '@stores/checkoutStore';
 
 interface Inputs {
   cardNumber: number;
@@ -22,6 +23,7 @@ const schema = z.object({
 
 interface PaymentModalProps {}
 export default function PaymentModal({}: PaymentModalProps) {
+  const totalPrice = useCheckoutStore((state) => state.totalPrice);
   const {
     control,
     handleSubmit,
@@ -61,7 +63,7 @@ export default function PaymentModal({}: PaymentModalProps) {
         <div className="right-container">
           <div className="total-info-div">
             <span className="total-info-span">You have to pay:</span>
-            <span className="total-info-span">0.00 $</span>
+            <span className="total-info-span">{totalPrice} $</span>
           </div>
           <TextButton
             text="Pay now"
@@ -69,9 +71,7 @@ export default function PaymentModal({}: PaymentModalProps) {
             fontWeight={600}
             fontSize={14}
             radius={9}
-            css={{
-              backgroundImage: color.primary,
-            }}
+            backgroundColor={color.primary}
           />
         </div>
       </div>
