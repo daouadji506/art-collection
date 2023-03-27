@@ -8,49 +8,49 @@ const imageArray = [
     url: profile,
     alt: 'profile',
 
-    name: 'harnan',
+    title: 'harnan',
     price: 500,
   },
   {
     url: profile,
     alt: 'profile',
 
-    name: 'harnan',
+    title: 'harnan',
     price: 500,
   },
   {
     url: profile,
     alt: 'profile',
 
-    name: 'harnan',
+    title: 'harnan',
     price: 500,
   },
   {
     url: profile,
     alt: 'profile',
 
-    name: 'harnan',
+    title: 'harnan',
     price: 500,
   },
   {
     url: profile,
     alt: 'profile',
 
-    name: 'harnan',
+    title: 'harnan',
     price: 500,
   },
   {
     url: profile,
     alt: 'profile',
 
-    name: 'harnan',
+    title: 'harnan',
     price: 500,
   },
   {
     url: profile,
     alt: 'profile',
 
-    name: 'harnan',
+    title: 'harnan',
     price: 500,
   },
 ];

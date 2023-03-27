@@ -15,6 +15,6 @@ FirstStory.args = {
   alt: 'profile',
   height: 100,
   width: 300,
-  name: 'harnan',
+  title: 'harnan',
   price: 500,
 };

@@ -17,7 +17,7 @@ interface ImageItemProps {
   onLike?: () => void;
   id: number;
   liked?: boolean;
-  name: string;
+  title: string;
   price: number;
 }
 export default function ImageItem({
@@ -28,11 +28,11 @@ export default function ImageItem({
   onLike,
   id,
   liked = false,
-  name,
+  title,
   price,
 }: ImageItemProps) {
   const { addToCart } = useCheckoutStore();
-  //TODO add id
+
   return (
     <div
       className="image-item"
@@ -45,7 +45,7 @@ export default function ImageItem({
               alt={alt}
               url={url}
               price={price}
-              title={name}
+              title={title}
               artist={'Someone'}
               resolution={'1900x600'}
             />
@@ -66,16 +66,14 @@ export default function ImageItem({
             <IconicButton
               Icon={Buy}
               onPress={() => {
-                //TODO supply real data
-
-                addToCart({ id: id, name: name, price: price, url: url });
+                addToCart({ id: id, title: title, price: price, url: url });
               }}
               afterBgColor={color.darken}
               iconSize={25}
             />
           </div>
           <div className="footer-container">
-            <span>{name}</span>
+            <span>{title}</span>
             <div className="money-div">
               <Linker />
               <span>{price} $</span>
