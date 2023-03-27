@@ -103,7 +103,7 @@ export default function ProductModal({
             }}
             fontWeight={600}
             onPress={() => {
-              addToCart({ id: id, name: title, price: price, url: url });
+              addToCart({ id: id, title: title, price: price, url: url });
             }}
             fontSize={14}
             radius={9}
